@@ -1,8 +1,3 @@
-// google api key AIzaSyBnlX7jxji2BlFzxWGLjJfUCjjnMgMbKO0
-// how to search for coordinates of arbitrary location?
-
-
-// calls callback with the nearest airports in the results array.
 function get_nearest_airport(lat, lng, callback) {
     var curLoc = new google.maps.LatLng(lat,lng);
 
@@ -47,4 +42,3 @@ $(window).load(function(){
         console.log("Location is not available.");
     }
 });
-
