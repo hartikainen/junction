@@ -1,4 +1,6 @@
+import unicodedata
 import requests
+import json
 
 def fetch_flights(origin=False, destination=False):
     params = {"key": APP_KEY}
@@ -39,3 +41,19 @@ def fetch_flights(origin=False, destination=False):
     print r.url
     print r.text
     return
+
+def fetch_nearest_airports(latitude, longitude):
+    url = "https://airport.api.aero/airport/nearest/%.15f/%.15f" % (float(latitude), float(longitude))
+    params = {
+        "maxAirports": 3,
+        "user_key": AERO_KEY
+    }
+    r = requests.get(url, params = params)
+    response_str = r.text[len("callback("):-1]
+    print response_str
+    response = json.loads(response_str)
+    print response['airports']
+    for airport in response['airports']:
+        print airport['code']
+
+    return 0
