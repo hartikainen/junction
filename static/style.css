@@ -1,9 +1,68 @@
 body {
     background-color: white;
-    padding-top: 20px;
     font-size: 16px;
 }
 
 .container {
     max-width: 720px;
+}
+
+.experiences {
+
+}
+
+.experience {
+    height: 300px;
+    color: white;
+    position: relative;
+
+    background-image: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.experience.active {
+    color: black;
+}
+
+.experience .content {
+    padding: 0 30px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.experience.active .content {
+    display: initial;
+    background: rgba(255,255,255,0.5);
+    text-align: justify;
+}
+
+
+.experience h1,
+.experience h2,
+.experience h3,
+.experience p {
+    margin: auto;
+    text-align: center;
+}
+
+.experience h2 {
+    margin: 30px auto 10px auto;
+}
+
+.experience h3 {
+    margin: 5px auto;
+}
+
+.experience .description {
+    display: none;
+}
+
+.experience.active .description {
+    display: initial;
 }

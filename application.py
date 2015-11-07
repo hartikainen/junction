@@ -9,9 +9,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost:5432/junction'
 connect('junction')
 
 @app.route('/', methods=['GET'])
-def main_page():
-    #fetch_flights()
-    return render_template('main.html');
+def questions():
+    return render_template('questions.html');
+
+@app.route('/experiences', methods=['GET'])
+def experiences():
+    return render_template('experiences.html');
 
 if __name__ == '__main__':
     app.run()
