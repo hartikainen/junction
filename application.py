@@ -9,7 +9,7 @@ connect('junction')
 
 @app.route('/', methods=['GET'])
 def main_page():
-    return "test";
+    return render_template('main.html');
 
 if __name__ == '__main__':
     app.run()
