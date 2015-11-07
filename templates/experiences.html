@@ -6,30 +6,86 @@
 
 {% block content %}
 
-<div class="row">
-  <div class="experiences col-xs-12 col-xs-offset-0">
-    <div class="row experience" style="background-image: url('http://cdn.wanderlust.co.uk/contentimages/wanderlust/magazine-08_greece_ready.jpg');">
-      <div class="content">
-        <h2 class="title">Soak up Santorini</h2>
-        <h3 class="location">Santorini, Greece</h3>
+<div class="top-bar">
+  <img class="logo" src="/static/img/logo.svg" onerror="this.src='/static/img/logo.png'">
+</div>
+
+<div class="container experiences">
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-0">
+      <div class="row experience">
+        <div class="image-container"  style="background-image: url('http://cdn.wanderlust.co.uk/contentimages/wanderlust/magazine-08_greece_ready.jpg');">
+          <div class="overlay">
+            <h2 class="title">Soak up Santorini</h2>
+            <p class="location">Greece</p>
+            <button type="button" class="btn btn-junction">Book Now</button>
+          </div>
+        </div>
         <p class="description">This mini-archipelago in the Cyclades was once a huge volcano, but a super-eruption around 1640BC saw it sink into the sea, leaving only remnants of its craggy caldera to be lapped by the Med. The result is pure Greek-isle fantasy: white-washed houses, steep-stepped alleys leading to old harbours, and traditional tavernas serving fish suppers.</p>
       </div>
-    </div>
 
-    <div class="row experience" style="background-image: url('http://cdn.wanderlust.co.uk/contentimages/wanderlust/magazine-06_great_barrier_ready.jpg')">
-      <h2 class="title">Dive the Great Barrier Reef</h2>
-      <h3 class="location">Great Barrier Reef, Australia</h3>
-      <p class="description">This mini-archipelago in the Cyclades was once a huge volcano, but a super-eruption around 1640BC saw it sink into the sea, leaving only remnants of its craggy caldera to be lapped by the Med. The result is pure Greek-isle fantasy: white-washed houses, steep-stepped alleys leading to old harbours, and traditional tavernas serving fish suppers.</p>
-      <!-- <img src=""> -->
-    </div>
+      <div class="row experience">
+        <div class="image-container" style="background-image: url('http://cdn.wanderlust.co.uk/contentimages/wanderlust/magazine-06_great_barrier_ready.jpg')">
+          <div class="overlay">
+            <h2 class="title">Dive the Great Barrier Reef</h2>
+            <p class="location">Australia</p>
+            <button type="button" class="btn btn-junction">Book Now</button>
+          </div>
+        </div>
+        <p class="description">2,600km of coral hugging Australia’s east coast, from Bundaberg in the south to beyond Cape York. Simply, the biggest reef in the world. It has options for all: novice divers can learn in safe waters, yet still see plenty of the reef’s 1,500 fish species during lessons. More experienced divers should sail to the Outer Reef for pristine coral gardens.</p>
+        <!-- <img src=""> -->
+      </div>
 
-    <div class="row experience" style="background-image: url('http://cdn.wanderlust.co.uk/contentimages/wanderlust/magazine-02_hebrides_ready.jpg')">
-      <h2 class="title">Roam the Outer Hebrides</h2>
-      <h3 class="location">Outer Hebrides, Scotland</h3>
-      <p class="description">This mini-archipelago in the Cyclades was once a huge volcano, but a super-eruption around 1640BC saw it sink into the sea, leaving only remnants of its craggy caldera to be lapped by the Med. The result is pure Greek-isle fantasy: white-washed houses, steep-stepped alleys leading to old harbours, and traditional tavernas serving fish suppers.</p>
-      <!-- <img src=""> -->
+      <div class="row experience">
+        <div class="image-container" style="background-image: url('http://cdn.wanderlust.co.uk/contentimages/wanderlust/magazine-02_hebrides_ready.jpg')">
+          <div class="overlay">
+            <h2 class="title">Roam the Outer Hebrides</h2>
+            <p class="location">Scotland</p>
+            <button type="button" class="btn btn-junction">Book Now</button>
+          </div>
+        </div>
+        <p class="description">Ringed by some of the UK’s loveliest white-sand beaches and crystal-clear waters, these islands are a mecca for marine wildlife, with whales, dolphins, porpoises and basking sharks visiting year-round. Hikers and bikers will find trails galore, or you could take to the skies and kitesurf over Barra’s beach airstrip, the only one in the UK.</p>
+        <!-- <img src=""> -->
+      </div>
     </div>
   </div>
 </div>
 
+<div class="container reserve">
+  <div class="location origin">
+    <span class="pinpoint">A</span>
+    <h3 class="city">Helsinki</h3>
+    <h4 class="country">Finland</h4>
+  </div>
+
+  <div class="location destination">
+    <span class="pinpoint">B</span>
+    <h3 class="city">Dive the Great Barrier Reef</h3>
+    <h4 class="country">Australia</h4>
+  </div>
+
+  <div class="info-box flight-info">
+    <img class="icon plane-icon" src="/static/img/plane.svg" onerror="this.src='/static/img/plane.png'">
+    <p><span>from</span> 1200e </p>
+  </div>
+
+  <div class="info-box airbnb-info">
+    <img class="icon airbnb-icon" src="/static/img/airbnb.svg" onerror="this.src='/static/img/airbnb.png'">
+    <p><span>from</span> 43e / night</p>
+  </div>
+
+  <div class="info-box experiment-info">
+    <img class="icon experience-icon" src="/static/img/experience.svg" onerror="this.src='/static/img/experience.png'">
+    <p> 200e</p>
+  </div>
+
+  <div class="total">
+    <p>Total 1445e</p>
+  </div>
+
+  <button type="button" class="btn btn-junction book">
+    Book all
+  </button>
+
+</div>
 {% endblock %}

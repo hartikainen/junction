@@ -6,53 +6,54 @@
 
 {% block content %}
 
-<div class="row">
-  <div class="questions col-xs-12 col-xs-offset-0">
-    <div class="row question question-1 active">
-      <div class="option urban col-xs-12" data-answer="urban">
-        <div class="content">
-          <h2>Urban</h2>
-          <p>Cities, Villages, ...</p>
+<div class="container questions">
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-0">
+      <div class="row question question-1 active">
+        <div class="option urban col-xs-12" data-answer="urban">
+          <div class="overlay">
+            <h2>Urban</h2>
+            <p>Cities, Villages, ...</p>
+          </div>
+        </div>
+        <div class="option nature col-xs-12" data-answer="nature">
+          <div class="overlay">
+            <h2>Nature</h2>
+            <p>Forests, Mountains, ...</p>
+          </div>
         </div>
       </div>
-      <div class="option nature col-xs-12" data-answer="nature">
-        <div class="content">
-          <h2>Nature</h2>
-          <p>Forests, Mountains, ...</p>
-        </div>
-      </div>
-    </div>
 
-    <div class="row question question-2">
-      <div class="option adventure col-xs-12" data-answer="adventure">
-        <div class="content">
-          <h2>Adventure</h2>
-          <p>Diving, Rafting, ...</p>
+      <div class="row question question-2">
+        <div class="option adventure col-xs-12" data-answer="adventure">
+          <div class="overlay">
+            <h2>Adventure</h2>
+            <p>Diving, Rafting, ...</p>
+          </div>
+        </div>
+        <div class="option chill col-xs-12" data-answer="chill">
+          <div class="overlay">
+            <h2>Chill</h2>
+            <p>Tour a romantic city, Chill on a beach, ...</p>
+          </div>
         </div>
       </div>
-      <div class="option chill col-xs-12" data-answer="chill">
-        <div class="content">
-          <h2>Chill</h2>
-          <p>Tour a romantic city, Chill on a beach, ...</p>
-        </div>
-      </div>
-    </div>
 
-    <div class="row question question-3">
-      <div class="option warm col-xs-12" data-answer="warm">
-        <div class="content">
-          <h2>Warm</h2>
-          <p>More than 25 degrees...</p>
+      <div class="row question question-3">
+        <div class="option warm col-xs-12" data-answer="warm">
+          <div class="overlay">
+            <h2>Warm</h2>
+            <p>More than 25 degrees...</p>
+          </div>
         </div>
-      </div>
-      <div class="option cold col-xs-12" data-answer="cold">
-        <div class="content">
-          <h2>Cold</h2>
-          <p>Less than 25 degrees...</p>
+        <div class="option cold col-xs-12" data-answer="cold">
+          <div class="overlay">
+            <h2>Cold</h2>
+            <p>Less than 25 degrees...</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-{% endblock %}
+  {% endblock %}

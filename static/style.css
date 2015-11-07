@@ -5,8 +5,38 @@ body {
     font-family: "Helvetica", "Arial", sans-serif;
 }
 
+a, p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, strong, li {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+
+.top-bar {
+    height: 60px;
+    background-color: #ff4848;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: block;
+    width: 120px;
+    height: 100%;
+    margin: auto;
+}
+
 .container {
     max-width: 720px;
+}
+
+.container.question {
     height:100vh;
     overflow: hidden;
 }
@@ -19,19 +49,25 @@ body {
     display: block;
 }
 
-.option {
+.option,
+.image-container {
     display: table;
-    height: 50vh;
-    color: white;
-    position: relative;
-
     padding: 0;
+
+    width: 100%;
+
+    color: white;
 
     background-image: no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.option {
+    height: 50vh;
+    position: relative;
 }
 
 .option.urban {
@@ -53,30 +89,42 @@ body {
     background-image: url("/static/img/cold.jpg");
 }
 
-.option .content {
+.option h2 {
+    font-size: 30px;
+}
+
+.overlay {
     vertical-align: middle;
     text-align: center;
     display: table-cell;
     padding: 0 30px;
-    position: relative;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: rgba(0,0,0,0.2);
+    /* position: relative; */
+    /* top: 0; */
+    /* bottom: 0; */
+    /* right: 0; */
+    /* left: 0; */
+    background: rgba(0,0,0,0.35);
 }
 
-.option .content h2 {
+.overlay h2 {
     vertical-align: middle;
     font-weight: bold;
 }
 
-.option .content p {
+.overlay p {
     font-weight: 100;
     font-size: 16px;
 }
 
-.experience h1,
+.experiences,
+.reserve {
+    padding-top: 60px;
+}
+
+.experience .overlay {
+    height: 240px;
+}
+
 .experience h2,
 .experience h3,
 .experience p {
@@ -84,18 +132,105 @@ body {
     text-align: center;
 }
 
+.experience .description {
+    font-size: 12px;
+    text-align: left;
+
+    padding: 20px;
+}
+
 .experience h2 {
-    margin: 30px auto 10px auto;
+    margin: 70px auto 5px auto;
 }
 
 .experience h3 {
     margin: 5px auto;
 }
 
-.experience .description {
-    display: none;
+.reserve {
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
-.experience.active .description {
-    display: initial;
+.location {
+    height: 60px;
+}
+
+.location.origin {
+    border-bottom: 1px solid #ff4848;
+}
+
+.location h3 {
+    margin: 20px 10px 0 30px;
+
+    color: #ff4848;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.location h4 {
+    font-size: 16px;
+    margin: 0 10px 10px 30px;
+}
+
+.pinpoint {
+    float: left;
+}
+
+.info-box {
+    border: 1px solid #ff4848;
+    margin-bottom: 10px;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+
+.info-box p {
+    font-size: 20px;
+}
+
+.info-box p span {
+    font-size: 12px;
+}
+
+.info-box .icon {
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.pinpoint {
+    background-image: url("/static/img/place.svg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    color: #fff;
+    font-weight: normal;
+    font-size: 14px;
+
+    margin: 0 10px 0 0;
+    width: 23px;
+    height: 30px;
+
+    text-align: center;
+}
+
+.total {
+    height: 60px;
+    color: #ff4848;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.total p {
+    line-height: 60px;
+    font-size: 22px;
+}
+
+button.book {
+    width: 100%;
 }
