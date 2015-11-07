@@ -1,20 +1,31 @@
 body {
     background-color: white;
     font-size: 16px;
+    position: relative;
+    font-family: "Helvetica", "Arial", sans-serif;
 }
 
 .container {
     max-width: 720px;
+    height:100vh;
+    overflow: hidden;
 }
 
-.experiences {
-
+.question {
+    display: none;
 }
 
-.experience {
-    height: 300px;
+.question.active {
+    display: block;
+}
+
+.option {
+    display: table;
+    height: 50vh;
     color: white;
     position: relative;
+
+    padding: 0;
 
     background-image: no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -23,25 +34,47 @@ body {
     background-size: cover;
 }
 
-.experience.active {
-    color: black;
+.option.urban {
+    background-image: url("/static/img/urban.jpg");
+}
+.option.chill {
+    background-image: url("/static/img/chill.jpg");
+}
+.option.nature {
+    background-image: url("/static/img/nature.jpg");
+}
+.option.adventure {
+    background-image: url("/static/img/adventure.jpg");
+}
+.option.warm {
+    background-image: url("/static/img/warm.jpg");
+}
+.option.cold {
+    background-image: url("/static/img/cold.jpg");
 }
 
-.experience .content {
+.option .content {
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
     padding: 0 30px;
-    position: absolute;
+    position: relative;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
+    background: rgba(0,0,0,0.2);
 }
 
-.experience.active .content {
-    display: initial;
-    background: rgba(255,255,255,0.5);
-    text-align: justify;
+.option .content h2 {
+    vertical-align: middle;
+    font-weight: bold;
 }
 
+.option .content p {
+    font-weight: 100;
+    font-size: 16px;
+}
 
 .experience h1,
 .experience h2,
