@@ -23,7 +23,7 @@ Base = declarative_base()
 class Experience(db.Model):
     __tablename__ = 'experiences'
     key = db.Column('key_column',db.BigInteger, primary_key=True)
-    experience = db.Column('experience', db.String) 
+    experience = db.Column('experience', db.String)
     place = db.Column('place', db.String)
     country = db.Column('country', db.String)
     image = db.Column('image', db.String)
@@ -63,11 +63,11 @@ def experiences():
     try:
         resArray = []
         qarr = query.split();
-        dbq = Experience.query.filter_by(nature_urban=qarr[0],adventure_chill=qarr[1], warm_cold=qarr[2])
-        for it in dbq:
-            resArray.append(it.getJSON().encode('utf-8'))
+        experiences = Experience.query.filter_by(nature_urban=qarr[0],adventure_chill=qarr[1], warm_cold=qarr[2])
+        # for it in dbq:
+        #     resArray.append(it.getJSON().encode('utf-8'))
 
-        return json.dumps(resArray)
+        return render_template('experiences.html', experiences=experiences)
 
     except:
         return "[{'key':-1}]"

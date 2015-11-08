@@ -16,40 +16,18 @@
 <div class="container experiences">
   <div class="row">
     <div class="col-xs-12 col-xs-offset-0">
-      <div class="row experience" data-title="Soak up Santorini" data-location="Santorini, Greece" data-price="666">
-        <div class="image-container" style="background-image: url('http://cdn.wanderlust.co.uk/contentimages/wanderlust/magazine-08_greece_ready.jpg');">
-          <div class="overlay">
-            <h2 class="title">Soak up Santorini</h2>
-            <p class="country">Greece</p>
-            <button type="button" class="btn btn-junction experience-info">Book Now</button>
+      {% for experience in experiences %}
+        <div class="row experience" data-title="{{ experience.experience }}" data-location="{{ experience.place }}" data-price="{{ experience.experience_price }}">
+          <div class="image-container" style="background-image: url('{{ experience.image }}');">
+            <div class="overlay">
+              <h2 class="title">{{ experience.experience }}</h2>
+              <p class="country">{{ experience.place }}</p>
+              <button type="button" class="btn btn-junction experience-info">Book Now</button>
+            </div>
           </div>
+          <p class="description">{{ experience.description }}</p>
         </div>
-        <p class="description">This mini-archipelago in the Cyclades was once a huge volcano, but a super-eruption around 1640BC saw it sink into the sea, leaving only remnants of its craggy caldera to be lapped by the Med. The result is pure Greek-isle fantasy: white-washed houses, steep-stepped alleys leading to old harbours, and traditional tavernas serving fish suppers.</p>
-      </div>
-
-      <div class="row experience" data-title="Dive the Great Barrier Reef" data-location="Jiiri, Australia">
-        <div class="image-container" style="background-image: url('http://cdn.wanderlust.co.uk/contentimages/wanderlust/magazine-06_great_barrier_ready.jpg')">
-          <div class="overlay">
-            <h2 class="title">Dive the Great Barrier Reef</h2>
-            <p class="country">Australia</p>
-            <button type="button" class="btn btn-junction experience-info">Book Now</button>
-          </div>
-        </div>
-        <p class="description">2,600km of coral hugging Australia’s east coast, from Bundaberg in the south to beyond Cape York. Simply, the biggest reef in the world. It has options for all: novice divers can learn in safe waters, yet still see plenty of the reef’s 1,500 fish species during lessons. More experienced divers should sail to the Outer Reef for pristine coral gardens.</p>
-        <!-- <img src=""> -->
-      </div>
-
-      <div class="row experience"  data-title="Roam the Outer Hebrides" data-location="Jaari, Scotland">
-        <div class="image-container" style="background-image: url('http://cdn.wanderlust.co.uk/contentimages/wanderlust/magazine-02_hebrides_ready.jpg')">
-          <div class="overlay">
-            <h2 class="title">Roam the Outer Hebrides</h2>
-            <p class="country">Scotland</p>
-            <button type="button" class="btn btn-junction experience-info">Book Now</button>
-          </div>
-        </div>
-        <p class="description">Ringed by some of the UK’s loveliest white-sand beaches and crystal-clear waters, these islands are a mecca for marine wildlife, with whales, dolphins, porpoises and basking sharks visiting year-round. Hikers and bikers will find trails galore, or you could take to the skies and kitesurf over Barra’s beach airstrip, the only one in the UK.</p>
-        <!-- <img src=""> -->
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>
