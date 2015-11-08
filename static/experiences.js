@@ -1,10 +1,38 @@
-var redirectToFlights = function(evt) {
+var geocoder = null;
+var origin = null;
+var destination = null;
+
+var selectedExperience = {
+    title: null,
+    location: null,
+};
+
+var processOrigin = function(position) {
+    origin = [position.coords.latitude, position.coords.longitude];
+    console.log("got origin:", origin);
+};
+
+var processDestination = function(result, status) {
+    var loc = result[0].geometry.location;
+    var lat = loc.lat();
+    var lng = loc.lng();
+    destination = [loc.lat(), loc.lng()];
+    departureDate = getCurrentDate();
+
     window.location.replace("/flights?" +
-                            "origin=123.123+456.456" +
-                            "destination=123.123+456.456" +
-                            "persons=1" +
-                            "departure=2015-11-10" +
-                            "arrival=2015-11-21");
+                            "origin=" + origin[0] + "+" + origin[1] +
+                            "&destination=" + destination[0] + "+" + destination[1] +
+                            "&persons=1" +
+                            "&departure=" + departureDate +
+                            "&arrival=2015-11-21");
+};
+
+var redirectToFlights = function(evt) {
+    var target = $(evt.currentTarget);
+    console.log(target);
+    destinationAddress = selectedExperience.location;
+
+    geocoder.geocode({'address': destinationAddress}, processDestination);
 }
 
 var closeExperienceInfo = function(evt) {
@@ -15,14 +43,31 @@ var closeExperienceInfo = function(evt) {
 }
 
 var openExperienceInfo = function(evt) {
-    var experience = $(evt.currentTarget);
-    console.log(experience);
+    var button = $(evt.currentTarget);
+    var experience = button.parents(".experience");
+    var title = experience.data("title");
+    var location = experience.data("location");
+
+    selectedExperience.title = title;
+    selectedExperience.location = location;
+
     $(".experiences").addClass("hidden");
     $(".reserve").removeClass("hidden")
 }
 
 $(function() {
+    geocoder = new google.maps.Geocoder();
+
     $(".experience-info").click(openExperienceInfo);
     $(".close-info").click(closeExperienceInfo);
     $(".book").click(redirectToFlights);
+
+
+    if ("geolocation" in navigator) {
+        console.log("Location available");
+        navigator.geolocation.getCurrentPosition(processOrigin);
+    } else {
+        console.log("Location is not available.");
+    }
+
 });
