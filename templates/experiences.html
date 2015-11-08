@@ -2,6 +2,8 @@
 
 {% block javascript %}
 <script type="text/javascript" src="/static/experiences.js"></script>
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 {% endblock %}
 
 {% block content %}
@@ -13,8 +15,8 @@
 <div class="container experiences">
   <div class="row">
     <div class="col-xs-12 col-xs-offset-0">
-      <div class="row experience">
-        <div class="image-container"  style="background-image: url('http://cdn.wanderlust.co.uk/contentimages/wanderlust/magazine-08_greece_ready.jpg');">
+      <div class="row experience" data-title="Soak up Santorini" data-location="Greece">
+        <div class="image-container" style="background-image: url('http://cdn.wanderlust.co.uk/contentimages/wanderlust/magazine-08_greece_ready.jpg');">
           <div class="overlay">
             <h2 class="title">Soak up Santorini</h2>
             <p class="location">Greece</p>
