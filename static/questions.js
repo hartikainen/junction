@@ -25,7 +25,8 @@ var startQuestions = function() {
 
         answers.push(answer);
 
-        if (question < NUM_QUESTIONS) {
+        if (question < NUM_QUESTIONS-1) {
+            console.log("question" + question);
             ++question;
             if (question > 0) {
                 hideInfoBar();
@@ -34,7 +35,6 @@ var startQuestions = function() {
         } else {
             queryStr = answers.join("+");
             window.location.replace("/experiences?query=" + queryStr);
-            return;
         }
     }
 
