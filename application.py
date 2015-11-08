@@ -74,10 +74,22 @@ def experiences():
 
 @app.route('/flights', methods=['GET'])
 def flights():
-    latitude = request.args.get('latitude')
-    longitude = request.args.get('longitude')
-    nearest_airports = fetch_nearest_airports(latitude, longitude)
-    return render_template('flights.html')
+    origin = request.args.get('origin').split(" ")
+    destination = request.args.get('destination').split(" ")
+    departure_date = request.args.get('departure')
+    print departure_date
+
+    nearest_airport_origin = fetch_nearest_airports(float(origin[0]),
+                                                    float(origin[1]))
+
+    nearest_airport_destination = fetch_nearest_airports(float(destination[0]),
+                                                         float(destination[1]))
+
+    flight_data = fetch_flights(nearest_airport_origin,
+                                nearest_airport_destination,
+                                departure_date)
+
+    return flight_data#render_template('flights.html')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0",port=5000)

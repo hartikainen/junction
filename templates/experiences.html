@@ -9,28 +9,29 @@
 {% block content %}
 
 <div class="top-bar">
+  <img class="close-info hidden" src="/static/img/back-button.svg" onerror="this.src='/static/img/back-button.png'">
   <img class="logo" src="/static/img/logo.svg" onerror="this.src='/static/img/logo.png'">
 </div>
 
 <div class="container experiences">
   <div class="row">
     <div class="col-xs-12 col-xs-offset-0">
-      <div class="row experience" data-title="Soak up Santorini" data-location="Greece">
+      <div class="row experience" data-title="Soak up Santorini" data-location="Santorini, Greece" data-price="666">
         <div class="image-container" style="background-image: url('http://cdn.wanderlust.co.uk/contentimages/wanderlust/magazine-08_greece_ready.jpg');">
           <div class="overlay">
             <h2 class="title">Soak up Santorini</h2>
-            <p class="location">Greece</p>
+            <p class="country">Greece</p>
             <button type="button" class="btn btn-junction experience-info">Book Now</button>
           </div>
         </div>
         <p class="description">This mini-archipelago in the Cyclades was once a huge volcano, but a super-eruption around 1640BC saw it sink into the sea, leaving only remnants of its craggy caldera to be lapped by the Med. The result is pure Greek-isle fantasy: white-washed houses, steep-stepped alleys leading to old harbours, and traditional tavernas serving fish suppers.</p>
       </div>
 
-      <div class="row experience">
+      <div class="row experience" data-title="Dive the Great Barrier Reef" data-location="Jiiri, Australia">
         <div class="image-container" style="background-image: url('http://cdn.wanderlust.co.uk/contentimages/wanderlust/magazine-06_great_barrier_ready.jpg')">
           <div class="overlay">
             <h2 class="title">Dive the Great Barrier Reef</h2>
-            <p class="location">Australia</p>
+            <p class="country">Australia</p>
             <button type="button" class="btn btn-junction experience-info">Book Now</button>
           </div>
         </div>
@@ -38,11 +39,11 @@
         <!-- <img src=""> -->
       </div>
 
-      <div class="row experience">
+      <div class="row experience"  data-title="Roam the Outer Hebrides" data-location="Jaari, Scotland">
         <div class="image-container" style="background-image: url('http://cdn.wanderlust.co.uk/contentimages/wanderlust/magazine-02_hebrides_ready.jpg')">
           <div class="overlay">
             <h2 class="title">Roam the Outer Hebrides</h2>
-            <p class="location">Scotland</p>
+            <p class="country">Scotland</p>
             <button type="button" class="btn btn-junction experience-info">Book Now</button>
           </div>
         </div>
@@ -68,12 +69,12 @@
 
   <div class="info-box flight-info">
     <img class="icon plane-icon" src="/static/img/plane.svg" onerror="this.src='/static/img/plane.png'">
-    <p><span>from</span> 1200e </p>
+    <p><span>from</span> 1200 &euro; </p>
   </div>
 
   <div class="info-box airbnb-info">
     <img class="icon airbnb-icon" src="/static/img/airbnb.svg" onerror="this.src='/static/img/airbnb.png'">
-    <p><span>from</span> 43e / night</p>
+    <p><span>from</span> 43 &euro; / night</p>
   </div>
 
   <div class="info-box experiment-info">
@@ -87,10 +88,6 @@
 
   <button type="button" class="btn btn-junction btn-full-width book">
     Book all
-  </button>
-
-  <button type="button" class="btn btn-invisible btn-full-width close-info">
-    < Back
   </button>
 
 </div>

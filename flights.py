@@ -2,8 +2,16 @@ import unicodedata
 import requests
 import json
 
-def fetch_flights(origin=False, destination=False):
-    params = {"key": APP_KEY}
+QPX_KEY = "AIzaSyCGG7RIlC4tKUe_lRPEnPLHv4_wbbJk8P8"
+AERO_KEY = "e6f866816ab0b233fc098adeabab8cf8"
+R = False
+
+def fetch_flights(origin=False, destination=False, date="2015-11-10"):
+    print origin
+    print destination
+    print date
+    r = R
+    params = {"key": QPX_KEY}
     request_data = {
         "request": {
             "passengers": {
@@ -17,9 +25,9 @@ def fetch_flights(origin=False, destination=False):
             "slice": [
                 {
                     "kind": "qpxexpress#sliceInput",
-                    "origin": "HEL",
-                    "destination": "SFO",
-                    "date": "2015-11-08",
+                    "origin": origin,
+                    "destination": destination,
+                    "date": date,
                     "maxStops": 1,
                     "maxConnectionDuration": 4320,
                     "preferredCabin": "COACH",
@@ -36,16 +44,18 @@ def fetch_flights(origin=False, destination=False):
         }
     }
 
-    r = requests.post('https://www.googleapis.com/qpxExpress/v1/trips/search',
-                      json = request_data, params = params)
-    print r.url
-    print r.text
-    return
+    if not r:
+        r = requests.post('https://www.googleapis.com/qpxExpress/v1/trips/search',
+                          json = request_data, params = params)
+
+    response = json.loads(r.text)
+    print r.text[0:1000]
+    return r.text
 
 def fetch_nearest_airports(latitude, longitude):
     url = "https://airport.api.aero/airport/nearest/%.15f/%.15f" % (float(latitude), float(longitude))
     params = {
-        "maxAirports": 3,
+        "maxAirports": 1,
         "user_key": AERO_KEY
     }
     r = requests.get(url, params = params)
@@ -56,4 +66,6 @@ def fetch_nearest_airports(latitude, longitude):
     for airport in response['airports']:
         print airport['code']
 
-    return 0
+    airport_code = response['airports'][0]['code']
+
+    return airport_code

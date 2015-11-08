@@ -39,17 +39,34 @@ var closeExperienceInfo = function(evt) {
     var reserve = $(evt.currentTarget);
     console.log(reserve);
     $(".experiences").removeClass("hidden");
-    $(".reserve").addClass("hidden")
+    $(".reserve").addClass("hidden");
+    $(".close-info").addClass("hidden");
+}
+
+var renderExperienceInfo = function(evt) {
+    $(".close-info").removeClass("hidden");
+    var $element = $(".reserve");
+
+    var originSplit = selectedExperience.location.split(", ");
+    $element.find(".origin .city").text("Helsinki");
+    $element.find(".origin .country").text("Finland");
+
+    var destinationSplit = selectedExperience.location.split(", ");
+    $element.find(".destination .city").text(selectedExperience.title);
+    $element.find(".destination .country").text(destinationSplit[1]);
+
+    $element.find(".experiment-info p").html(selectedExperience.price);
 }
 
 var openExperienceInfo = function(evt) {
     var button = $(evt.currentTarget);
     var experience = button.parents(".experience");
-    var title = experience.data("title");
-    var location = experience.data("location");
 
-    selectedExperience.title = title;
-    selectedExperience.location = location;
+    selectedExperience.title    = experience.data("title");
+    selectedExperience.location = experience.data("location");
+    selectedExperience.price    = experience.data("price") + " &euro;";
+
+    renderExperienceInfo();
 
     $(".experiences").addClass("hidden");
     $(".reserve").removeClass("hidden")
@@ -61,7 +78,6 @@ $(function() {
     $(".experience-info").click(openExperienceInfo);
     $(".close-info").click(closeExperienceInfo);
     $(".book").click(redirectToFlights);
-
 
     if ("geolocation" in navigator) {
         console.log("Location available");
