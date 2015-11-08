@@ -10,7 +10,7 @@ a, p, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, strong, li {
     -moz-osx-font-smoothing: grayscale;
 }
 
-h2 {
+nh2 {
     font-size: 20px;
     letter-spacing: 0.5px;
 }
@@ -23,6 +23,14 @@ h2 {
     left: 0;
     right: 0;
     z-index: 1000;
+}
+
+.close-info {
+    width: 100px;
+    height: 60px;
+    float: left;
+    margin-left: -20px;
+    margin-right: -80px;
 }
 
 .logo {
@@ -51,15 +59,13 @@ h2 {
 
 .option,
 .image-container {
+    position: relative;
     display: table;
     padding: 0;
-
     width: 100%;
 
     color: white;
-
     background-image: no-repeat center center fixed;
-
 
     -webkit-background-position: 50% 50%;
     -moz-background-position: 50% 50%;
@@ -151,12 +157,17 @@ h2 {
 }
 
 .experience h2 {
-    margin: 70px auto 5px auto;
+    margin: 50px auto 5px auto;
 }
 
 .experience h3 {
     margin: 5px auto;
 }
+
+/* .experience-info { */
+/*     position: relative; */
+/*     bottom: 10px; */
+/* } */
 
 .reserve {
     padding-left: 30px;
@@ -164,7 +175,10 @@ h2 {
 }
 
 .location {
-    height: 60px;
+    min-height: 60px;
+    overflow: auto;
+    padding-top: 20px;
+    padding-bottom: 5px;
 }
 
 .location.origin {
@@ -172,7 +186,7 @@ h2 {
 }
 
 .location h3 {
-    margin: 20px 10px 0 30px;
+    margin: 0 10px 0 30px;
 
     color: #ff4848;
     font-weight: bold;
@@ -194,6 +208,10 @@ h2 {
     text-align: center;
     height: 60px;
     line-height: 60px;
+}
+
+.info-box.experiment-info {
+    margin-bottom: 0;
 }
 
 .info-box p {
@@ -240,4 +258,8 @@ h2 {
 .total p {
     line-height: 60px;
     font-size: 22px;
+}
+
+.book {
+    margin-top: 0;
 }
