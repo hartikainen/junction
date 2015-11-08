@@ -59,6 +59,13 @@ h2 {
     color: white;
 
     background-image: no-repeat center center fixed;
+
+
+    -webkit-background-position: 50% 50%;
+    -moz-background-position: 50% 50%;
+    -o-background-position: 50% 50%;
+    background-position: 50% 50%;
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

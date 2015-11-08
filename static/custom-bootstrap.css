@@ -9,7 +9,8 @@
     color: white;
 }
 
-.btn-junction:hover {
+.btn-junction:hover,
+.btn-junction:focus {
     color: white;
     background-color: red;
 }
